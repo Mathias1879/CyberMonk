@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+MODEL="gpt-4o-mini"
+
+if [ ! -t 0 ]; then
+    PROMPT=$(cat)
+else
+    PROMPT="$*"
+fi
+
+if [ -z "$PROMPT" ]; then
+    echo "Usage: ai \"your prompt\""
+    exit 1
+fi
+
+openai api chat.completions.create \
+  -m "$MODEL" \
+  -g user="$PROMPT" \
+  --stream

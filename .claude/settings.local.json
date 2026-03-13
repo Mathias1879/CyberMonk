@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:formulae.brew.sh)",
+      "Bash(defaults read:*)",
+      "Bash(mkdir:*)",
+      "Bash(echo:*)",
+      "Bash(tmux list-windows:*)"
+    ]
+  }
+}
